@@ -86,8 +86,10 @@ imshow(rgbF1);
 %grey_imageF1 = rgb2gray(rgbF1);
 %imshow(grey_imageF1)
 
+% ADJUST Px RADIUS AND SENSITIVITY TO CORRECT RANGE
+
 [centresF1,radiiF1] = imfindcircles(rgbF1,[40 48],... % px range of RADIUS
-    'Sensitivity',0.976,'method','twostage') %between 0 and 1
+    'Sensitivity',0.976,'method','twostage') % Sensitivity between 0 and 1
         % ,'ObjectPolarity','dark') if circles are darker than bg
 
 imshow(rgbF1)
@@ -181,7 +183,7 @@ text(A2x,A2y,txt1,'color','m','FontWeight','bold');
 text(B2x,B2y,txt2,'color','m','FontWeight','bold');
 export_fig('angle.png')
 
-%% PART 4: SAVE TO EXCEL FILE
+%% PART 5: SAVE TO EXCEL FILE
 
 radiiF2A = radiiF2(1,1); % Define all of the vars to output
 radiiF2B = radiiF2(2,1);
